@@ -12,6 +12,7 @@
 	<!-- sample04 -->
 	<bean id="calcAdd" class="sample04.CalcAdd" scope="prototype"></bean>
 	<bean id="calcMul" class="sample04.CalcMul" scope="prototype"></bean>
+	<bean id="SungJuk" class="sample05.SungJukImpl" scope="prototype"></bean> 
 	
 	
 </beans>
