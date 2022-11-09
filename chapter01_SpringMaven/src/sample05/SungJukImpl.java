@@ -2,6 +2,9 @@ package sample05;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SungJukImpl implements SungJuk {
 	private String name;
 	private int kor,eng,mat,tot;

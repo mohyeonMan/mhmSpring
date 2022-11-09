@@ -6,9 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class HelloSpring {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		SungJuk sungJuk = context.getBean("SungJuk",SungJuk.class);
+		SungJuk sungJuk = context.getBean("sungJukImpl",SungJuk.class);
 		sungJuk.calc();
 		sungJuk.display();
 	}
-
 }

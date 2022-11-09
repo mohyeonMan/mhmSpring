@@ -1,14 +1,15 @@
-package sample05;
+package sample01;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloSpring {
+public class HelloSpring_01 {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		SungJuk sungJuk = context.getBean("SungJuk",SungJuk.class);
-		sungJuk.calc();
-		sungJuk.display();
+		MessageBean messageBean = context.getBean("messageBeanImpl",MessageBean.class);
+		messageBean.sayHello();
+		messageBean.sayHello("딸기",20000);
+		messageBean.sayHello("바나나",2000, 10);
 	}
 
 }
