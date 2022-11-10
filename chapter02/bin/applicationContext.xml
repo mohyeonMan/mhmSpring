@@ -23,7 +23,24 @@
 	<bean id="calcMul" class="sample02.CalcMul">
 		<property name="x" value="25"/>
 		<property name="y" value="36"/>
-
 	</bean>
-
+	<!-- sample03 -->
+	<!-- <bean id="sungJukDTO" class="sample03.SungJukDTO">
+		<property name="name" value="박지훈"></property>
+		<property name="kor" value="70"></property>
+		<property name="eng" value="80"></property>
+		<property name="mat" value="90"></property>
+	</bean>
+	
+	<bean id="sungJukImpl" class="sample03.SungJukImpl">
+		<constructor-arg ref="sungJukDTO"></constructor-arg>
+	</bean> -->
+	<context:component-scan base-package="sample03"></context:component-scan>
+	
+	<!-- sample05 -->
+	<bean id="helloSpring" class="sample05.HelloSpring"></bean>
+	<bean id="list" class="java.util.ArrayList"></bean>
+	<bean id="sungJukDTO2" class="sample05.SungJukDTO2"></bean>
+	<bean id="sungJukInput" class="sample05.SungJukInput"></bean>
+	<bean id="sungJukOutput" class="sample05.SungJukOutput"></bean>
 </beans>
