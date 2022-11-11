@@ -4,10 +4,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import lombok.Setter;
 
 @Setter
+@Component
 public class SungJukDelete implements SungJuk {
+	@Autowired
+	@Qualifier("arrayList")
 	private List<SungJukDTO2> list;
 
 	@Override

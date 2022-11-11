@@ -1,10 +1,16 @@
 package sample05;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
+
+@Component
+@Scope("prototype")
 @Getter
+@Setter
 public class SungJukDTO2 {
 	private String name2;
 	private int kor2,eng2,mat2;

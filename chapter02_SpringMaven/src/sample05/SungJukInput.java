@@ -1,24 +1,23 @@
 package sample05;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 
+@Component
+@Scope("prototype")
 public class SungJukInput implements SungJuk{
-		SungJukDTO2 sungJukDTO2=null;
-		private List<SungJukDTO2> list;
-		
-	public void setList(List<SungJukDTO2> list) {
-			this.list = list;
-		}
-
-	public void setSungJukDTO2(SungJukDTO2 sungJukDTO2) {
-			this.sungJukDTO2 = sungJukDTO2;
-		}
+	@Autowired //Spring이 알아서 찾는다.
+	SungJukDTO2 sungJukDTO2=null;
+	@Autowired // 다형성으로 arraylist 찾아온다.
+	@Qualifier("arrayList") //ArrayList가 들어갈것임을 알려줌. 안그러면 null값이 하나가 들어있음.
+	private List<SungJukDTO2> list;
+	
 
 	@Override
 	public void execute() {

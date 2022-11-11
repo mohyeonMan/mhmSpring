@@ -1,11 +1,15 @@
 package spring.conf;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import sample01.MessageBeanImpl;
 import sample02.CalcAdd;
 import sample02.CalcMul;
+import sample05.SungJukDTO2;
 
 @Configuration //환경설정을 위한 java파일로 선언.
 public class SpringConfiguration { //applicationContext.xml 의 역할을 하는 클래스.
@@ -22,6 +26,10 @@ public class SpringConfiguration { //applicationContext.xml 의 역할을 하는
 	@Bean(name="calcMul")
 	public CalcMul getCalcMul() {
 		return new CalcMul();
+	}
+	@Bean
+	public List<SungJukDTO2> arrayList(){
+		return new ArrayList<SungJukDTO2>(); // 내부클래스는 우리가 component할수가없다. 그래서 configuration이 꼭필요하다!
 	}
 	
 }
