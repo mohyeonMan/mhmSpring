@@ -5,12 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<!-- sample01 -->
-	<bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
-		<!-- 생성자를 통한 매개변수 주입 -->
+	<!-- <bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
+		생성자를 통한 매개변수 주입
 		<constructor-arg>
 			<value>사과</value>
 		</constructor-arg>
-		<!-- set메소드를 통한 매개변수 주입 -->
+		set메소드를 통한 매개변수 주입
 		<property name="cost">
 			<value>5000</value>
 		</property>
@@ -23,7 +23,8 @@
 	<bean id="calcMul" class="sample02.CalcMul">
 		<property name="x" value="25"/>
 		<property name="y" value="36"/>
-	</bean>
+	</bean> -->
+	
 	<!-- sample03 -->
 	<!-- <bean id="sungJukDTO" class="sample03.SungJukDTO">
 		<property name="name" value="박지훈"></property>
@@ -36,6 +37,23 @@
 		<constructor-arg ref="sungJukDTO"></constructor-arg>
 	</bean> -->
 	<context:component-scan base-package="sample03"></context:component-scan>
+	
+	
+	
+	<!-- sample04 -->
+	<bean id="fileOutputter" class="sample04.FileOutputter">
+		<property name="filePath" value="D:/Spring"></property>
+		<property name="fileName" value="result.txt"></property>
+	</bean>
+	
+	<bean id="messageBeanImpl" class="sample04.MessageBeanImpl">
+	<constructor-arg value="the name"></constructor-arg>
+	<property name="phone" value="010-0101-0101"></property>
+	<property name="outputter" ref="fileOutputter"></property>
+	</bean>
+	
+	
+	
 	
 	<!-- sample05 -->
 	<bean id="helloSpring" class="sample05.HelloSpring"></bean>
