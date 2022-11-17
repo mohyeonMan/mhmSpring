@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,7 +46,7 @@ public class SumController {
 //	}
 	
 	@GetMapping(value = "/result.do")
-	public String result(@RequestAttribute SumDTO sumDTO, Model model) {
+	public String result(@ModelAttribute SumDTO sumDTO, Model model) {
 		model.addAttribute("x",sumDTO);
 		
 		return "/sum/result";
