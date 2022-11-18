@@ -6,6 +6,7 @@
 
 	<typeAliases>
 		<typeAlias type="user.bean.UserDTO" alias="user" />
+		
 	</typeAliases>
 	
 	<!-- <mappers>

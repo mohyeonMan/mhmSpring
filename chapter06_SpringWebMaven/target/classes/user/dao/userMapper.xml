@@ -22,7 +22,7 @@
  	select * from usertable where id=#{id}
  	</select>
  	
- 	<select id="checkId" parameterType="String" resultType="Integer"> <!-- parameter, return 꼼꼼히 확인할것.... -->
+ 	<select id="checkId" parameterType="String" resultType="int"> <!-- parameter, return 꼼꼼히 확인할것.... -->
  	select count(*) from usertable where id=#{id}
  	</select>
  	

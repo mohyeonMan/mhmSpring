@@ -23,6 +23,7 @@ $('#writeBtn').click(function(){
 			data : $('#writeForm').serialize(),
 			success: function(){
 			alert("job done");
+			location.href="/chapter06_SpringWebMaven/user/list";
 			},
 			error: function(err){
 				console.log(err);
@@ -38,9 +39,11 @@ $('#id').focusout(function(){
 			data : 'id='+$('#id').val(),
 			dataType:'text',
 			success: function(data){
-				if(data==0){
+				if(data!=1){
+					$('#idDiv').css('color','blue');
 					$('#idDiv').text("ㅋㅋ 사용가능");
 				}else{
+					$('#idDiv').css('color','red;');
 					$('#idDiv').text("중복된 아이디");
 				}
 			},
@@ -49,5 +52,7 @@ $('#id').focusout(function(){
 			}
 		})
 		
+	}else{
+	$('#idDiv').text("아이디!!!!!");
 	}
 })

@@ -15,10 +15,10 @@
 </head>
 <body>
 
-<h3>
-	<img src="../img/222.gif" width="130" height="100"><br>
+<h2>
+	<img src="../img/222.gif" width="130" height="100" onclick="location.href='../'" style="cursor: pointer;"><br>
 	슾을잉
-</h3>
+</h2>
 
 
 <form id="writeForm">
@@ -53,8 +53,8 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<!-- <script type="text/javascript" src="../js/write.js"></script> -->
 <script type="text/javascript" src="../js/write.js"></script>
+
 
 </body>
 </html>

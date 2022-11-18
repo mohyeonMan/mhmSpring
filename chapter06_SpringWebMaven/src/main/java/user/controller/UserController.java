@@ -1,5 +1,7 @@
 package user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -33,8 +35,30 @@ public class UserController {
 	
 	@PostMapping(value = "checkId")
 	@ResponseBody
-	public String checkId(@RequestParam String id) {
-		return userService.checkId(id)+"";
+	public int checkId(@RequestParam String id) {
+		return userService.checkId(id);
+	}
+	
+	@GetMapping(value = "list")
+	public String list() {
+		return "/user/list";
+	}
+	@PostMapping(value = "getList")
+	@ResponseBody //json으로 변환
+	public List<UserDTO> getList() {
+		return userService.getList();
+	}
+	
+	@GetMapping(value = "updateForm")
+	public String updateForm() {
+		return "/user/updateForm";
+	}
+	
+	@PostMapping(value = "getUser")
+	@ResponseBody //json으로 변환
+	public UserDTO getUser(@RequestParam String result) {
+		if(userService.getUser(result)==null) return null;
+		else return userService.getUser(result);
 	}
 }
 
