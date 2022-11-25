@@ -46,7 +46,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-			<input type="button" id="writeBtn" value="드가자">
+			<input type="button" id="writeBtn" value="회원가입">
 			</td>
 		</tr>
 	</table>

@@ -57,9 +57,9 @@ public class UserController {
 	@PostMapping(value = "getUser")
 	@ResponseBody //json으로 변환
 	public UserDTO getUser(@RequestParam String result) {
-		if(userService.getUser(result)==null) return null;
-		else return userService.getUser(result);
+		return userService.getUser(result);
 	}
+	
 }
 
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<context:component-scan base-package="sample01"/>
+<!-- AOP -->
+	<aop:config>
+		<aop:pointcut expression="execution(public void sample01.MessageBeanImpl.*Before())" id="beforeMethod"/>
+		<aop:pointcut expression="execution(public * *.*.*After())" id="afterMethod"/>
+		<aop:pointcut expression="execution(public * *.*.*Print())" id="print"/>
+			<!-- pointcut 안내. -->
+		<aop:aspect ref="loggingAdvice">
+			<aop:before method="beforeTrace" pointcut-ref="beforeMethod"/>
+			<aop:after method="afterTrace" pointcut-ref="afterMethod"/>
+			<aop:around method="trace" pointcut-ref="print"/>
+		</aop:aspect>
+		
+		
+	</aop:config>
+
+</beans>

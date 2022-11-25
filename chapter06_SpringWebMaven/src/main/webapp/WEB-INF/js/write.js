@@ -40,10 +40,8 @@ $('#id').focusout(function(){
 			dataType:'text',
 			success: function(data){
 				if(data!=1){
-					$('#idDiv').css('color','blue');
 					$('#idDiv').text("ㅋㅋ 사용가능");
-				}else{
-					$('#idDiv').css('color','red;');
+				}else if(data==1){
 					$('#idDiv').text("중복된 아이디");
 				}
 			},

@@ -14,12 +14,18 @@
 	<mvc:annotation-driven/>
 	<mvc:resources mapping="/img/**" location="/WEB-INF/img/" />
 	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+	<mvc:resources mapping="/storage/**" location="/WEB-INF/storage/" />
+	
 	
 	<!-- resource를 위한 주소값에서 servlet으로 가지않게 mapping -->
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF"/>
 		<property name="suffix" value=".jsp"/> <!-- setViewName() 생략 -->
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5000000"></property> <!-- byte단위의 파일업로드 사이즈제한 -->
 	</bean>
 	
 	
